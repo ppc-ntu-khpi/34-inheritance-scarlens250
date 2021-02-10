@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="animal">
+  <ClassDiagramComponents>
+    <Class name="animal" package="domain" visibility="public" xPosition="223.0" yPosition="115.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="weight" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="eat" returnType="void" visibility="public"/>
+        <Method name="speak" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cat" package="domain" visibility="public" xPosition="89.0" yPosition="378.0">
+      <Fields>
+        <Field name="kind" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="weight"/>
+          <Argument type="String" name="kind"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="play" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Predator" package="domain" visibility="public" xPosition="551.0" yPosition="210.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hunt" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TestAnimal" package="test" visibility="public" xPosition="551.0" yPosition="435.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="domain.Predator" target="domain.animal"/>
+    <UseRelation name="" source="test.TestAnimal" target="domain.Cat" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="domain.Cat" target="domain.Predator"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
